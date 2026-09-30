@@ -7,9 +7,9 @@
 
 ## Adoption
 
-No personal fork is required at this baseline.
+The upstream files remain mirrored unchanged, but `hf-cli` has a personal adapted version for safer global use.
 
-- **hf-cli** — direct on demand only. Do not keep globally active: its trigger is intentionally broad and the CLI can perform high-impact remote actions.
+- **hf-cli** — use the adapted personal version globally. Keep the mirrored upstream copy only as the Base for updates; its trigger is intentionally broad and its CLI can perform high-impact remote actions.
 - **huggingface-local-models** — direct on demand for local GGUF/llama.cpp work.
 - **huggingface-tool-builder** — direct on demand for reusable HF API scripts; generated scripts still require review.
 - **huggingface-gradio** — direct project-local for Gradio projects.
