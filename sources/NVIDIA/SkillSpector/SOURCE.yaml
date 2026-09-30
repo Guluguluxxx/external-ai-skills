@@ -1,0 +1,49 @@
+id: NVIDIA/SkillSpector
+mode: pointer
+category: security/skill-scanner
+
+upstream:
+  repo: NVIDIA/SkillSpector
+  url: https://github.com/NVIDIA/SkillSpector
+  branch: main
+  synced_commit: 2226747e4ca97198bb82faf5085b8a75f2e1dc02
+  synced_at: 2026-09-30
+  version: 2.12.0
+
+license:
+  type: Apache-2.0
+  redistribution: permitted
+  mirror_reason: repository is a large executable tool; source mirroring is unnecessary
+
+tracked_files:
+  - path: pyproject.toml
+    sha: e04a8ccaa0d201cc40292ade667b6eca77a74df2
+  - path: skills/skill-inspector/SKILL.md
+    sha: 25f071e28b5e679da7d8deae1789dbbf8cec9ccf
+
+adoption:
+  use_policy: tool-only
+  install_skill_inspector: false
+  rationale:
+    - personal-skill-lifecycle already owns semantic review and install decisions
+    - installing NVIDIA skill-inspector would duplicate that policy
+    - SkillSpector CLI adds useful static evidence without duplicating runtime Skill instructions
+
+runtime:
+  requires_python: ">=3.12,<3.15"
+  preferred_install: "uv tool install git+https://github.com/NVIDIA/skillspector.git@2226747e4ca97198bb82faf5085b8a75f2e1dc02"
+  default_scan: "skillspector scan <TARGET> --no-llm"
+  optional_llm_analysis: true
+
+risk:
+  level: medium
+  notes:
+    - static scanning may clone/download untrusted targets into temporary/local storage
+    - SC4 may query OSV.dev with automatic offline fallback
+    - LLM mode can transmit analyzed content to configured providers and may require credentials
+    - MCP mode is optional and not required for the default workflow
+    - scanner findings are evidence, not a safety verdict
+
+sync_policy:
+  review_diff_before_update: true
+  pin_install_to_reviewed_commit: true
