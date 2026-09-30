@@ -1,0 +1,50 @@
+id: Astro-Han/karpathy-llm-wiki
+mode: mirror
+category: knowledge/llm-wiki
+
+upstream:
+  repo: Astro-Han/karpathy-llm-wiki
+  url: https://github.com/Astro-Han/karpathy-llm-wiki
+  branch: main
+  synced_commit: eafcc77001e496cc43499e4923b663aec722c813
+  synced_at: 2026-09-30
+
+license:
+  type: MIT
+  redistribution: permitted
+  license_sha: 45da0c6f40ad9016fde2165b44e08212dfc27d8d
+
+runtime_files:
+  - path: SKILL.md
+    sha: 82cb4e28b9ac8a7779d866091697e317bdd3d146
+  - path: scripts/check_evidence.py
+    sha: a5f24cdd7d0ec9b26207b933ba86c082c1a6aca8
+  - path: references/raw-template.md
+    sha: 18c9457b3f2e859f6f4bd7fcdb563ab061149eb0
+  - path: references/index-template.md
+    sha: 86c345fab98eefea475fa889494a597a1789fce6
+  - path: references/article-template.md
+    sha: e7896da0e362c658b523260568a6e5b52cf38e15
+  - path: references/archive-template.md
+    sha: 25367deee10cfa4f6160f32e055d59ef664ddafd
+
+adoption:
+  use_policy: direct-project-local
+  scope: isolated-knowledge-project
+  notes:
+    - do not initialize at the root of the existing Obsidian vault
+    - use a separate topic/project directory first
+    - plain Query is read-only; Ingest/Lint follow the Skill's explicit raw/wiki boundaries
+    - check_evidence.py is report-only and uses the Python standard library
+
+risk:
+  level: medium
+  notes:
+    - Ingest writes source and compiled knowledge files
+    - source fetching may use whatever web/file tools the active agent exposes
+    - raw is intended to be immutable once stored
+    - no credentials or bundled network client are present in the selected runtime
+
+sync_policy:
+  preserve_upstream_bytes: true
+  review_diff_before_sync: true
