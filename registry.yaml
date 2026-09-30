@@ -106,3 +106,13 @@ sources:
     synced_commit: 0a8dffb40cf811e9ed3d47ddebd8455cec4341b9
     license_status: no-license-file-found
     use_policy: research-project-local
+
+  - id: cisco-ai-defense/skill-scanner
+    category: security/skill-scanner
+    mode: pointer
+    path: sources/cisco-ai-defense/skill-scanner
+    upstream_repo: cisco-ai-defense/skill-scanner
+    reviewed_release: 2.1.0
+    reviewed_commit: a24df340ca6056a6446a239f4a7b114b11c6073a
+    license_status: Apache-2.0
+    use_policy: tool-only-high-risk-second-opinion
