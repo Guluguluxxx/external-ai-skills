@@ -5,20 +5,39 @@
 - License: MIT
 - Mode: `mirror`
 - Selected: `obsidian-markdown`, `obsidian-cli`
-- Adoption: direct upstream use; no adapted fork currently required.
+
+## Adoption
+
+- `obsidian-markdown` → **direct**
+- `obsidian-cli` → **adapted** in `Guluguluxxx/my-ai-skills/skills/adapted/obsidian-cli`
+- personal note-routing / structure → **own** Skill `personal-knowledge-workflow`
 
 ## Audit summary
 
 ### obsidian-markdown
 
-Low risk. Pure Obsidian Markdown syntax guidance and reference files. No scripts, credentials, network actions, or external writes are bundled in the selected Skill.
+Low risk. Pure Obsidian Markdown syntax/reference guidance; no bundled scripts, credentials, network calls, or external-write tooling.
+
+The mirrored files are preserved byte-identical to the reviewed upstream commit.
 
 ### obsidian-cli
 
-Medium risk because the Skill exposes commands that can read/write a Vault and can run Obsidian app-context JavaScript through `obsidian eval`. The selected Skill itself is Markdown-only and does not bundle an installer or credential store.
+Medium risk because the CLI can write/delete/move Vault files, publish content, change plugins/themes, and run Obsidian app-context JavaScript through `obsidian eval`.
 
-Use personal workflow rules to decide *whether* to write, what note format to use, and when confirmation is required. Keep this upstream Skill unchanged as the execution/syntax layer.
+The reviewed upstream Skill still uses the obsolete `silent` flag. Current official Obsidian CLI documentation says:
+
+- installer version 1.12.7+ is required;
+- **Command line interface** must be enabled in Settings → General;
+- Obsidian must be running (or is launched by the first command);
+- create/append-style commands are silent unless `open` is explicitly supplied;
+- `open` and `overwrite` are current flags.
+
+Therefore the upstream CLI mirror remains unchanged, while the personal adapted Skill carries current syntax and write-safety boundaries.
 
 ## Update rule
 
-Mirror upstream bytes only after reviewing the Base → New diff. If future upstream behavior conflicts with personal workflow, create an adapted Skill in `my-ai-skills` instead of editing this mirror.
+Review Base → New before syncing the mirror.
+
+- Markdown-only compatible updates may remain direct.
+- CLI changes must be compared against the adapted personal version.
+- Do not overwrite personal write-routing or safety semantics from upstream.
