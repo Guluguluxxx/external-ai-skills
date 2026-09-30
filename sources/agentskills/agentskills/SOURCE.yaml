@@ -1,0 +1,25 @@
+upstream:
+  repo: agentskills/agentskills
+  branch: main
+  reviewed_commit: 69ef37e9424c0a7ea9dd2293b559e43ec8176379
+  reviewed_at: 2026-09-30
+
+mode: pointer
+category: standard/agent-skills-format
+license:
+  code: Apache-2.0
+  documentation: CC-BY-4.0
+
+use_policy: reference-only
+purpose: canonical format and validation reference for portable Agent Skills
+
+reviewed_surfaces:
+  - README.md
+  - docs/specification.mdx
+  - skills-ref
+
+notes:
+  - Do not install as a runtime Skill.
+  - Use the specification to validate format and progressive-disclosure structure.
+  - Treat allowed-tools as experimental and host-dependent.
+  - Active Codex host behavior remains authoritative for runtime compatibility.
