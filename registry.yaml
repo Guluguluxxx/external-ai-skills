@@ -96,25 +96,3 @@ sources:
     synced_commit: d7cce4b7eada07d08e094165aafbbb03a9928e58
     license_status: MIT
     use_policy: adapted
-
-  - id: kepano/obsidian-skills/obsidian-markdown
-    category: knowledge/obsidian
-    mode: mirror
-    path: sources/kepano/obsidian-skills/obsidian-markdown
-    upstream_repo: kepano/obsidian-skills
-    upstream_path: skills/obsidian-markdown
-    upstream_branch: main
-    synced_commit: 3ccff5338ea700537839b21900aa5358a0402c98
-    license_status: MIT
-    usage: direct
-
-  - id: kepano/obsidian-skills/obsidian-cli
-    category: knowledge/obsidian
-    mode: mirror
-    path: sources/kepano/obsidian-skills/obsidian-cli
-    upstream_repo: kepano/obsidian-skills
-    upstream_path: skills/obsidian-cli
-    upstream_branch: main
-    synced_commit: 3ccff5338ea700537839b21900aa5358a0402c98
-    license_status: MIT
-    usage: direct
