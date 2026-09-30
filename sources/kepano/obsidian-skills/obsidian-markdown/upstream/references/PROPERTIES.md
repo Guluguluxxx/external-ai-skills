@@ -35,9 +35,9 @@ due: 2024-02-01T14:30:00
 
 ## Default Properties
 
-- `tags`
-- `aliases`
-- `cssclasses`
+- `tags` - Note tags (searchable, shown in graph view)
+- `aliases` - Alternative names for the note (used in link suggestions)
+- `cssclasses` - CSS classes applied to the note in reading/editing view
 
 ## Tags
 
@@ -46,4 +46,16 @@ due: 2024-02-01T14:30:00
 #nested/tag
 #tag-with-dashes
 #tag_with_underscores
+```
+
+Tags can contain: letters (any language), numbers (not first character), underscores `_`, hyphens `-`, forward slashes `/` (for nesting).
+
+In frontmatter:
+
+```yaml
+---
+tags:
+  - tag1
+  - nested/tag2
+---
 ```
