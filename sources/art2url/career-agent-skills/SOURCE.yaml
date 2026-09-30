@@ -1,0 +1,45 @@
+id: art2url/career-agent-skills
+mode: mirror
+category: career/job-search
+
+upstream:
+  repo: art2url/career-agent-skills
+  url: https://github.com/art2url/career-agent-skills
+  branch: develop
+  synced_commit: d7cce4b7eada07d08e094165aafbbb03a9928e58
+  synced_at: 2026-09-30
+
+license:
+  type: MIT
+  redistribution: permitted
+  license_sha: b4f250f348c754c4147c651effdf0b4925ca5076
+
+selected_skills:
+  - name: resume-customizer
+    sha: 4323921242661af5957e8b6bbe4b82b53b762db9
+  - name: job-fit-analyzer
+    sha: 048606480e774a6827469770912ac2e8c4690644
+  - name: career-pivot-planner
+    sha: ba2be455d85ff462cb9428915392a6e74fdbf69a
+  - name: portfolio-case-study
+    sha: 5b52e5113159bcf8279e6d388dd3883a00a3af26
+
+adoption:
+  use_policy: adapted
+  adapted_in:
+    repo: Guluguluxxx/my-ai-skills
+    path: skills/adapted/personal-career-application
+  rationale:
+    - remove fixed match-score thresholds and Apply/Skip decisions
+    - preserve truthful resume tailoring, gap extraction, career translation, and case-study structure
+    - avoid invented or proxy metrics when real outcomes are unavailable
+
+risk:
+  level: low
+  notes:
+    - selected Skills are instruction-only
+    - career decisions remain with the user
+
+sync_policy:
+  preserve_upstream_bytes: true
+  require_three_way_analysis: true
