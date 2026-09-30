@@ -1,0 +1,62 @@
+id: znyupup/ai-video-editing-skill
+mode: pointer
+category: video/ffmpeg-editing
+
+upstream:
+  repo: znyupup/ai-video-editing-skill
+  url: https://github.com/znyupup/ai-video-editing-skill
+  branch: main
+  synced_commit: b6429ab550a64c595dc68d42c47cf2b489a50619
+  synced_at: 2026-09-30
+  declared_version: "1.1.0"
+
+license:
+  type: MIT
+  license_file_sha: 49ccf826a85d83a3eaedbf7dfb5e322f2f5a35be
+  redistribution: permitted
+  mode_reason: pointer is sufficient because only workflow ideas and selected FFmpeg/QC rules are adapted; no need to mirror the full upstream package
+
+tracked_files:
+  - path: SKILL.md
+    sha: 2a7122d0a4c6d3102dd05592fcb6f7d57878ba8b
+  - path: README.md
+    sha: 5bf1953d9911542c3c1b016caa487842843b5c94
+  - path: scripts/gen_dashboard.py
+    sha: f3250c8108991f1c3f5cca9930e4a3ec8ffeb68d
+  - path: scripts/gen_storyboard.py
+    sha: 71388c82493b986336947c797999a2ae0d2b6372
+  - path: templates/edit_plan_prompt.md
+    sha: 3659053cb0060640cdb1297ff788a77aa0a6ce24
+
+adoption:
+  use_policy: adapted
+  adapted_in:
+    repo: Guluguluxxx/my-ai-skills
+    path: skills/adapted/personal-video-batch-editing
+  retained:
+    - ffmpeg-first deterministic rendering
+    - short-sample validation before large batch rendering
+    - audio/video duration and sync checks
+    - avoid repeated re-encoding
+    - browser/storyboard preview as an optional review surface
+  removed_from_default:
+    - automatic Whisper/FunASR installation
+    - automatic model downloads
+    - mandatory vision API analysis
+    - automatic reference-video downloading
+    - Vlog-specific narrative ratios and fixed pacing heuristics
+    - shell=True command construction
+
+risk:
+  level: medium
+  findings:
+    - upstream recommends automatic pip installation and large ASR model downloads
+    - optional vision analysis uploads extracted local frames to an external API
+    - optional reference research may download videos using yt-dlp
+    - example code includes subprocess shell=True
+    - ffmpeg examples use overwrite mode and create many derived files
+    - frontmatter still declares version 1.1.0 while later commits add substantial workflow changes
+
+sync_policy:
+  review_diff_before_update: true
+  do_not_import_upstream_ai_or_cloud_defaults_automatically: true
