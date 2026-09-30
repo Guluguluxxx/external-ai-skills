@@ -1,0 +1,34 @@
+id: peterjohannmedina/codex-model-routing
+mode: pointer
+
+upstream:
+  repo: peterjohannmedina/codex-model-routing
+  url: https://github.com/peterjohannmedina/codex-model-routing
+  branch: main
+  synced_commit: a41de9d519b33bec85453d454d6d07e16ba7aacc
+  synced_at: 2026-09-30
+
+tracked_files:
+  - path: SKILL.md
+    sha: 91e512d5134cea908481282ebffb90fac8fdb4c2
+  - path: README.md
+    sha: 757a68e0aa0e5cefdb7563762f4e73adaadd6fc4
+
+license:
+  status: no-license-file-found
+  searched:
+    - LICENSE
+    - repository text search for common license markers
+  redistribution: not-assumed
+  source_files_copied: false
+
+adapted_usage:
+  repo: Guluguluxxx/my-ai-skills
+  path: skills/adapted/personal-model-routing
+  base_commit: a41de9d519b33bec85453d454d6d07e16ba7aacc
+
+sync_policy:
+  update_external_baseline: after_upstream_diff_review
+  overwrite_adapted_skill: false
+  require_three_way_analysis: true
+  require_user_confirmation_for_conflicts: true
