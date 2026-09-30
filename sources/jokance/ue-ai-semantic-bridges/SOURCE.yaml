@@ -1,0 +1,61 @@
+id: jokance/ue-ai-semantic-bridges
+mode: pointer
+category: unreal/material-ui-dsl
+
+upstream:
+  repo: jokance/ue-ai-semantic-bridges
+  url: https://github.com/jokance/ue-ai-semantic-bridges
+  branch: main
+  synced_commit: 0a8dffb40cf811e9ed3d47ddebd8455cec4341b9
+  synced_at: 2026-09-30
+
+selected_skills:
+  - name: ue-material-creator
+    path: skills/ue-material-creator
+    skill_sha: a11bda06a3cc2509d958730c84c9b3f97b8f2758
+    windows_launcher_sha: 522db7081e60e37d50f17d063ce68bb278bac0ca
+    validation_reference_sha: b7d93f8668d438ab759e0bc8db9cb574ebe551f4
+  - name: ue-widget-creator
+    path: skills/ue-widget-creator
+    skill_sha: e69649d076aa1de40cc7c847dcd7af10ee3e4c57
+
+license:
+  status: no-license-file-found
+  redistribution: not-assumed
+  source_files_copied: false
+
+adoption:
+  use_policy: research-project-local
+  install_now: false
+  reasons:
+    - Material workflow is highly relevant to UE technical-art work.
+    - Actual execution depends on the separate MaterialSemanticBridge Fab plugin.
+    - Repository does not expose a root LICENSE in the reviewed state.
+    - UE/version/plugin compatibility should be verified in a real UE5.7 test project before adoption.
+
+material_workflow:
+  strengths:
+    - material requirements -> materialdsl -> validate/normalize -> preview -> repair -> import
+    - schema discovery before guessing node properties/pins
+    - preview image or frame review before final import
+    - supports MaterialExpressionCustom within the documented support surface
+  boundaries:
+    - not for Niagara, Blueprint, Sequencer, or general Unreal C++
+    - not for arbitrary HLSL outside supported MaterialExpressionCustom usage
+    - normalization may rewrite the DSL into canonical form
+    - import writes Unreal assets
+    - optional build path can invoke Unreal build tooling
+
+personal_fit:
+  preserve:
+    - Blueprint-first project policy
+    - visual validation remains human-dependent when preview is insufficient
+    - existing Custom-node-only HLSL edits should stay direct HLSL when graph structure does not need changes
+  defer_until_tested:
+    - plugin installation
+    - project-local skill installation
+    - any automated material import into production assets
+
+sync_policy:
+  review_diff_before_update: true
+  require_ue57_plugin_compatibility_test_before_adoption: true
