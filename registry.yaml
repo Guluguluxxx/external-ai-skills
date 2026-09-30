@@ -96,3 +96,13 @@ sources:
     synced_commit: d7cce4b7eada07d08e094165aafbbb03a9928e58
     license_status: MIT
     use_policy: adapted
+
+  - id: jokance/ue-ai-semantic-bridges
+    category: unreal/material-ui-dsl
+    mode: pointer
+    path: sources/jokance/ue-ai-semantic-bridges
+    upstream_repo: jokance/ue-ai-semantic-bridges
+    upstream_branch: main
+    synced_commit: 0a8dffb40cf811e9ed3d47ddebd8455cec4341b9
+    license_status: no-license-file-found
+    use_policy: research-project-local
