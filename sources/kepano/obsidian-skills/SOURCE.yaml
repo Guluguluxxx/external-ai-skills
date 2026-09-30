@@ -1,0 +1,50 @@
+id: kepano/obsidian-skills
+mode: mirror
+
+upstream:
+  repo: kepano/obsidian-skills
+  url: https://github.com/kepano/obsidian-skills
+  branch: main
+  synced_commit: 3ccff5338ea700537839b21900aa5358a0402c98
+  synced_at: 2026-09-30
+
+license:
+  type: MIT
+  file: LICENSE
+  redistribution: permitted
+  license_sha: 33d692ee84f4464f575f2d1e927f19cf1c8ccc57
+
+selected_skills:
+  - name: obsidian-markdown
+    upstream_path: skills/obsidian-markdown
+    use_policy: direct
+    risk: low
+    files:
+      - path: SKILL.md
+        sha: bca51a429c020a4cb6740a917517116e66d428b1
+      - path: references/PROPERTIES.md
+        sha: e46a63abadd7c18224a79c2c9ea902bfb3e88bd6
+      - path: references/EMBEDS.md
+        sha: 668851abe0f056493e162f0a866762cced15c991
+      - path: references/CALLOUTS.md
+        sha: c086824c64156d17731c94a7029d3496dadbaa04
+
+  - name: obsidian-cli
+    upstream_path: skills/obsidian-cli
+    use_policy: direct
+    risk: medium
+    files:
+      - path: SKILL.md
+        sha: 0046c45abc11cbba48cee538e9cce9993a62747b
+
+review:
+  conclusion: direct-use
+  notes:
+    - obsidian-markdown is instruction-only and needs no personal fork.
+    - obsidian-cli is instruction-only but can invoke a powerful local CLI, including note writes and Obsidian app-context JavaScript.
+    - Personal write-routing and note-structure rules should live in a separate personal workflow instead of modifying the upstream CLI Skill.
+    - Obsidian CLI requires a compatible local Obsidian installation and the application to be running.
+
+sync_policy:
+  preserve_upstream_bytes: true
+  review_diff_before_sync: true
