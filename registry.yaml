@@ -119,7 +119,7 @@ sources:
 
   - id: huggingface/skills
     category: ai/huggingface
-    mode: pointer
+    mode: mirror
     path: sources/huggingface/skills
     upstream_repo: huggingface/skills
     upstream_branch: main
