@@ -1,0 +1,15 @@
+version: 1
+last_updated: 2026-09-30
+
+sources:
+  - id: peterjohannmedina/codex-model-routing
+    category: codex/model-routing
+    mode: pointer
+    path: sources/peterjohannmedina/codex-model-routing
+    upstream_repo: peterjohannmedina/codex-model-routing
+    upstream_branch: main
+    synced_commit: a41de9d519b33bec85453d454d6d07e16ba7aacc
+    license_status: no-license-file-found
+    adapted_in:
+      repo: Guluguluxxx/my-ai-skills
+      path: skills/adapted/personal-model-routing
