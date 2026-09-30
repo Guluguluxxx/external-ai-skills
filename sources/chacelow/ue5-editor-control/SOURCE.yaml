@@ -43,6 +43,10 @@ risk:
     - reviewed execute handler does not perform authentication checks
     - CORS response allows origin "*"
     - generic reflection includes call_function, modify_array_property, and execute_python
+    - call_function exact-name path invokes a resolved UFunction with ProcessEvent without requiring Public/BlueprintCallable flags
+    - execute_python executes arbitrary supplied Python inside the editor process
+    - reviewed plugin source chooses port 58080 but does not explicitly enforce loopback binding
+    - reviewed actor delete/mutation paths do not establish an explicit transaction-based rollback boundary
     - installer removes an existing Plugins/UE5AIAssistant directory before extraction
     - installer downloads a release ZIP without checksum/signature verification in the reviewed script
     - save_all, delete, settings writes, reflection writes, and arbitrary Python can make broad persistent changes
