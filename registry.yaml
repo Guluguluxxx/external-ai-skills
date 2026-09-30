@@ -189,3 +189,12 @@ sources:
     adapted_in:
       repo: Guluguluxxx/my-ai-skills
       path: skills/adapted/personal-skill-doctor
+  - id: MengTo/Skills
+    category: design/visual-workflows
+    mode: pointer
+    path: sources/MengTo/Skills
+    upstream_repo: MengTo/Skills
+    upstream_branch: main
+    synced_commit: 798db0a3ee4429ac8ed6bc5f4a59b6d45e7a914d
+    license_status: MIT
+    use_policy: research-selective-adaptation
