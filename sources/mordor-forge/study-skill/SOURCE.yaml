@@ -70,3 +70,19 @@ risk:
 
 sync_policy:
   review_diff_before_use: true
+
+
+workspace_boundaries:
+  - initialize only in a dedicated new study workspace
+  - do not run study init at the root of an existing development repository
+  - do not run study init at the root of the main Obsidian vault
+  - the study workspace may create its own git repository and commits
+  - workspace files are durable study state and may be resumed by another agent
+
+installation:
+  scope: project-local
+  cadence: on-demand
+  source: pinned-upstream
+  build_fsrs_only_if_go_compatible: true
+  install_optional_catalog_only_if_needed: true
+  optional_integrations_require_separate_decision: true
