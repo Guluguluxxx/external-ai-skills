@@ -1,0 +1,47 @@
+id: plugin87/ux-ui-agent-skills
+mode: pointer
+category: design/data-dashboard
+
+upstream:
+  repo: plugin87/ux-ui-agent-skills
+  url: https://github.com/plugin87/ux-ui-agent-skills
+  branch: main
+  synced_commit: f2e2f7fcc5cb9d99bbd8ec5e0d75cebb98e21e7e
+  synced_at: 2026-09-30
+  version: 2.8.0
+
+license:
+  type: MIT
+  redistribution: permitted
+  mirror_reason: selected Skill depends on repository-level scripts/examples; pointer keeps the full upstream context canonical
+
+tracked_files:
+  - path: .claude/skills/data-dashboard/SKILL.md
+    sha: 1e56f1aaa2d67d05c7992f8cbd262ba4164f3134
+  - path: package.json
+    sha: da1bf7d9fecbb390d8beb72ab124763dd823c5d9
+  - path: CLAUDE.md
+    sha: da5e48d0e32d1f4f3801fcd11a6acfe2993ecf11
+  - path: LICENSE
+    sha: 4803b932d79c14a86e3b639e4d59bf1326e57dfc
+
+adoption:
+  use_policy: adapted
+  reason:
+    - data-dashboard references repository-level scripts and examples, so the single SKILL.md is not standalone
+    - upstream CLAUDE.md contains broad global design opinions that should not become personal global policy
+    - retain dashboard composition, chart correctness, accessibility, responsive, and visual-verification ideas in a smaller personal Skill
+  adapted_in:
+    repo: Guluguluxxx/my-ai-skills
+    path: skills/adapted/personal-data-dashboard
+
+risk:
+  level: medium
+  notes:
+    - repository includes Node/Python validation scripts
+    - Playwright is a dev dependency for browser/render gates
+    - full upstream package is suitable only when those gates are intentionally adopted project-locally
+
+sync_policy:
+  review_diff_before_update: true
+  require_three_way_analysis: true
