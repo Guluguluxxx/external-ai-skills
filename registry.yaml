@@ -26,3 +26,13 @@ sources:
       - obsidian-markdown
       - obsidian-cli
     use_policy: direct
+
+  - id: NVIDIA/SkillSpector
+    category: security/skill-scanner
+    mode: pointer
+    path: sources/NVIDIA/SkillSpector
+    upstream_repo: NVIDIA/SkillSpector
+    upstream_branch: main
+    synced_commit: 2226747e4ca97198bb82faf5085b8a75f2e1dc02
+    license_status: Apache-2.0
+    use_policy: tool-only
