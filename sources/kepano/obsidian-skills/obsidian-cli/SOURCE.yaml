@@ -1,0 +1,40 @@
+id: kepano/obsidian-skills/obsidian-cli
+mode: mirror
+
+upstream:
+  repo: kepano/obsidian-skills
+  url: https://github.com/kepano/obsidian-skills
+  path: skills/obsidian-cli
+  branch: main
+  synced_commit: 3ccff5338ea700537839b21900aa5358a0402c98
+  synced_at: 2026-09-30
+
+tracked_files:
+  - path: skills/obsidian-cli/SKILL.md
+    sha: 0046c45abc11cbba48cee538e9cce9993a62747b
+  - path: LICENSE
+    sha: 33d692ee84f4464f575f2d1e927f19cf1c8ccc57
+
+license:
+  status: MIT
+  redistribution: allowed
+  source_files_copied: true
+
+usage:
+  type: direct
+  adapt_required: false
+  role: Local Obsidian vault read/write/search and plugin/theme development through the official Obsidian CLI
+
+runtime_requirements:
+  - Obsidian must be running.
+  - The local Obsidian CLI command must be available to Codex.
+
+risk:
+  level: medium
+  reasons:
+    - Can create, append, and modify notes and properties.
+    - Can run JavaScript inside Obsidian through the eval command.
+    - Can perform plugin/theme development commands.
+  boundary:
+    - Use personal workflow rules to decide when writes are appropriate.
+    - Do not treat CLI availability as permission to modify unrelated vault content.
