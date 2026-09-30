@@ -1,0 +1,30 @@
+upstream:
+  repo: MengTo/Skills
+  branch: main
+  reviewed_commit: 798db0a3ee4429ac8ed6bc5f4a59b6d45e7a914d
+  reviewed_at: 2026-09-30
+
+mode: pointer
+category: design/visual-workflows
+license: MIT
+use_policy: research-selective-adaptation
+
+reviewed_surfaces:
+  - README.md
+  - agent-skills/3d/README.md
+  - agent-skills/3d/3d-ultra-realistic-water/SKILL.md
+  - agent-skills/3d/3d-four-seasons/SKILL.md
+  - agent-skills/3d/3d-sky-rays/SKILL.md
+  - agent-skills/3d/3d-virtual-tour/SKILL.md
+  - agent-skills/game-development/create-game-vfx/SKILL.md
+  - agent-skills/ui/design-first-ui-prompting/SKILL.md
+  - agent-skills/codex/video-to-superprompt/SKILL.md
+  - agent-skills/codex/html-to-interaction-prompts/SKILL.md
+  - agent-skills/workflow/workflow-progress-screenshots/SKILL.md
+  - agent-skills/workflow/workflow-score-to-target/SKILL.md
+
+notes:
+  - Do not install the repository wholesale.
+  - 3D implementation skills are primarily Three.js/WebGL and are not direct UE5 execution skills.
+  - Reuse only renderer-neutral principles: reference decomposition, state ownership, same-framing evidence, real-render verification, and bounded visual iteration.
+  - Do not adopt score-to-target as a general optimization rule.
