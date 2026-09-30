@@ -1,0 +1,36 @@
+id: kepano/obsidian-skills/obsidian-markdown
+mode: mirror
+
+upstream:
+  repo: kepano/obsidian-skills
+  url: https://github.com/kepano/obsidian-skills
+  path: skills/obsidian-markdown
+  branch: main
+  synced_commit: 3ccff5338ea700537839b21900aa5358a0402c98
+  synced_at: 2026-09-30
+
+tracked_files:
+  - path: skills/obsidian-markdown/SKILL.md
+    sha: bca51a429c020a4cb6740a917517116e66d428b1
+  - path: skills/obsidian-markdown/references/EMBEDS.md
+    sha: 668851abe0f056493e162f0a866762cced15c991
+  - path: skills/obsidian-markdown/references/CALLOUTS.md
+    sha: c086824c64156d17731c94a7029d3496dadbaa04
+  - path: skills/obsidian-markdown/references/PROPERTIES.md
+    sha: e46a63abadd7c18224a79c2c9ea902bfb3e88bd6
+  - path: LICENSE
+    sha: 33d692ee84f4464f575f2d1e927f19cf1c8ccc57
+
+license:
+  status: MIT
+  redistribution: allowed
+  source_files_copied: true
+
+usage:
+  type: direct
+  adapt_required: false
+  role: Obsidian Flavored Markdown formatting and editing rules
+
+review_notes:
+  - Text/reference-only Skill; no executable scripts in the selected Skill folder.
+  - Suitable as a low-risk direct dependency.
