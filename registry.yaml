@@ -86,3 +86,13 @@ sources:
     synced_commit: 3694740352eeef5cdd689af694c485f1ff62eec3
     license_status: MIT
     use_policy: tool-only
+
+  - id: art2url/career-agent-skills
+    category: career/job-search
+    mode: mirror
+    path: sources/art2url/career-agent-skills
+    upstream_repo: art2url/career-agent-skills
+    upstream_branch: develop
+    synced_commit: d7cce4b7eada07d08e094165aafbbb03a9928e58
+    license_status: MIT
+    use_policy: adapted
