@@ -1,0 +1,40 @@
+id: vercel-labs/skills
+mode: pointer
+category: tooling/skill-manager
+
+upstream:
+  repo: vercel-labs/skills
+  url: https://github.com/vercel-labs/skills
+  branch: main
+  synced_commit: 3694740352eeef5cdd689af694c485f1ff62eec3
+  synced_at: 2026-09-30
+
+license:
+  type: MIT
+  redistribution: permitted
+  mirror_reason: executable package manager; source mirroring is unnecessary
+
+adoption:
+  use_policy: tool-only
+  role:
+    - list candidate Skills
+    - install selected reviewed Skills
+    - temporarily use low-frequency Skills
+    - list/remove/update installed Skills
+  notes:
+    - private GitHub installs reuse configured Git/gh/SSH authentication
+    - reviewed README states the tool does not execute gh auth token or read the stored GitHub CLI credential into its Node process
+    - use does not permanently install the selected Skill
+    - update should not replace the personal Base/New/Mine review policy
+
+risk:
+  level: medium
+  notes:
+    - clones/downloads external repositories
+    - writes Skill files/symlinks into agent directories
+    - update/remove can change installed Skill state
+    - installation still requires prior lifecycle review
+
+sync_policy:
+  pin_tool_review_to_commit: true
+  do_not_auto-update_adapted_skills: true
