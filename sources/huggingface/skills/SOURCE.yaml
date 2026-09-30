@@ -18,7 +18,7 @@ selected_skills:
   - name: hf-cli
     upstream_path: skills/hf-cli
     sha: 64e3ac29bb9d0b0ee3e910ce9d0da8779e755bb2
-    use_policy: direct-on-demand
+    use_policy: adapted-global
     risk: high
     notes:
       - broad Hub control surface includes auth, upload, delete, discussions, buckets, Jobs, webhooks, repos, and Inference Endpoints
@@ -60,3 +60,8 @@ external_action_policy:
 sync_policy:
   preserve_upstream_bytes: true
   review_diff_before_sync: true
+
+personal_integration:
+  adapted_in:
+    repo: Guluguluxxx/my-ai-skills
+    path: skills/adapted/hf-cli
