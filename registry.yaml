@@ -146,3 +146,13 @@ sources:
     synced_commit: 19392f7a08264ed00486a251f5b2098321771f94
     license_status: MIT
     use_policy: adapted-on-demand
+
+  - id: ZeroPointRepo/youtube-skills:youtube-full
+    category: media/youtube
+    mode: mirror
+    path: sources/ZeroPointRepo/youtube-full
+    upstream_repo: ZeroPointRepo/youtube-skills
+    upstream_branch: main
+    synced_commit: 4f7994b94e7d5e250c3b51102d609992e04d5d0d
+    license_status: MIT
+    use_policy: adapted-on-demand
