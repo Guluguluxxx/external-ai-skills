@@ -1,0 +1,62 @@
+id: huggingface/skills
+mode: mirror
+category: ai/huggingface
+
+upstream:
+  repo: huggingface/skills
+  url: https://github.com/huggingface/skills
+  branch: main
+  synced_commit: 80f9fa530e46f4ae642fcb9e1725bad0e1979395
+  synced_at: 2026-09-30
+
+license:
+  type: Apache-2.0
+  redistribution: permitted
+  license_sha: 261eeb9e9f8b2b4b0d119366dda99c6fd7d35c64
+
+selected_skills:
+  - name: hf-cli
+    upstream_path: skills/hf-cli
+    sha: 64e3ac29bb9d0b0ee3e910ce9d0da8779e755bb2
+    use_policy: direct-on-demand
+    risk: high
+    notes:
+      - broad Hub control surface includes auth, upload, delete, discussions, buckets, Jobs, webhooks, repos, and Inference Endpoints
+      - command surface includes printing the current access token
+      - do not install globally because the upstream trigger description is intentionally broad
+  - name: huggingface-local-models
+    upstream_path: skills/huggingface-local-models
+    sha: ece849559de75eaa8e9709a51e0e957e6ae630d3
+    use_policy: direct-on-demand
+    risk: medium
+    notes:
+      - may install llama.cpp, download large model files, start local servers, and use gated-repo auth
+      - prefer existing GGUFs before conversion
+  - name: huggingface-tool-builder
+    upstream_path: skills/huggingface-tool-builder
+    sha: 0634af706451240f82faf0871a15b0faac5f39a2
+    use_policy: direct-on-demand
+    risk: medium
+    notes:
+      - generates executable shell/Python/TSX utilities
+      - reference scripts use HF_TOKEN for authenticated API access
+      - review generated scripts before repeated or write-capable use
+  - name: huggingface-gradio
+    upstream_path: skills/huggingface-gradio
+    sha: 81dfb05834ab34a13cb0171a2fb03e4557b1e148
+    use_policy: direct-project-local
+    risk: low
+    notes:
+      - instruction-only selected Skill
+      - project dependency/runtime is Gradio itself, not bundled by this Skill
+
+external_action_policy:
+  read_search_download: autonomous_when_in_scope
+  token_printing: never_without_explicit_need
+  upload_publish_comment_merge_delete_move_bulk_sync_with_delete: explicit_confirmation
+  paid_cloud_jobs_or_endpoints: explicit_confirmation
+  credential_values: never_commit
+
+sync_policy:
+  preserve_upstream_bytes: true
+  review_diff_before_sync: true
