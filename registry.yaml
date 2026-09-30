@@ -36,3 +36,23 @@ sources:
     synced_commit: 2226747e4ca97198bb82faf5085b8a75f2e1dc02
     license_status: Apache-2.0
     use_policy: tool-only
+
+  - id: plugin87/ux-ui-agent-skills
+    category: design/data-dashboard
+    mode: pointer
+    path: sources/plugin87/ux-ui-agent-skills
+    upstream_repo: plugin87/ux-ui-agent-skills
+    upstream_branch: main
+    synced_commit: f2e2f7fcc5cb9d99bbd8ec5e0d75cebb98e21e7e
+    license_status: MIT
+    use_policy: adapted
+
+  - id: addyosmani/web-quality-skills
+    category: web/quality
+    mode: pointer
+    path: sources/addyosmani/web-quality-skills
+    upstream_repo: addyosmani/web-quality-skills
+    upstream_branch: main
+    synced_commit: afa8da942115f2961fdbfa80807ea0b232ff6c00
+    license_status: MIT
+    use_policy: direct-project-local
