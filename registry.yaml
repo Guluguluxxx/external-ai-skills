@@ -56,3 +56,13 @@ sources:
     synced_commit: afa8da942115f2961fdbfa80807ea0b232ff6c00
     license_status: MIT
     use_policy: direct-project-local
+
+  - id: Astro-Han/karpathy-llm-wiki
+    category: knowledge/llm-wiki
+    mode: mirror
+    path: sources/Astro-Han/karpathy-llm-wiki
+    upstream_repo: Astro-Han/karpathy-llm-wiki
+    upstream_branch: main
+    synced_commit: eafcc77001e496cc43499e4923b663aec722c813
+    license_status: MIT
+    use_policy: direct-project-local
