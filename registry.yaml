@@ -126,3 +126,13 @@ sources:
     synced_commit: 80f9fa530e46f4ae642fcb9e1725bad0e1979395
     license_status: Apache-2.0
     use_policy: mixed-adapted-on-demand
+
+  - id: mordor-forge/study-skill
+    category: learning/study-system
+    mode: pointer
+    path: sources/mordor-forge/study-skill
+    upstream_repo: mordor-forge/study-skill
+    upstream_branch: main
+    synced_commit: dffa35f955c421d65c326342b5273727906b26ee
+    license_status: README-declares-MIT-no-root-license-file
+    use_policy: direct-project-local-on-demand
