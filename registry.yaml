@@ -156,3 +156,13 @@ sources:
     synced_commit: 4f7994b94e7d5e250c3b51102d609992e04d5d0d
     license_status: MIT
     use_policy: adapted-on-demand
+
+  - id: znyupup/ai-video-editing-skill
+    category: video/ffmpeg-editing
+    mode: pointer
+    path: sources/znyupup/ai-video-editing-skill
+    upstream_repo: znyupup/ai-video-editing-skill
+    upstream_branch: main
+    synced_commit: b6429ab550a64c595dc68d42c47cf2b489a50619
+    license_status: MIT
+    use_policy: adapted
