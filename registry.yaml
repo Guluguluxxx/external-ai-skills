@@ -25,7 +25,7 @@ sources:
     selected_skills:
       - obsidian-markdown
       - obsidian-cli
-    use_policy: direct
+    use_policy: mixed-direct-adapted
 
   - id: NVIDIA/SkillSpector
     category: security/skill-scanner
