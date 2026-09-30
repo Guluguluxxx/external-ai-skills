@@ -13,3 +13,16 @@ sources:
     adapted_in:
       repo: Guluguluxxx/my-ai-skills
       path: skills/adapted/personal-model-routing
+
+  - id: kepano/obsidian-skills
+    category: knowledge/obsidian
+    mode: mirror
+    path: sources/kepano/obsidian-skills
+    upstream_repo: kepano/obsidian-skills
+    upstream_branch: main
+    synced_commit: 3ccff5338ea700537839b21900aa5358a0402c98
+    license_status: MIT
+    selected_skills:
+      - obsidian-markdown
+      - obsidian-cli
+    use_policy: direct
