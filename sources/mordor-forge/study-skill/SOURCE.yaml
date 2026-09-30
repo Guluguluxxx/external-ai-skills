@@ -1,0 +1,72 @@
+id: mordor-forge/study-skill
+mode: pointer
+category: learning/study-system
+
+upstream:
+  repo: mordor-forge/study-skill
+  url: https://github.com/mordor-forge/study-skill
+  branch: main
+  synced_commit: dffa35f955c421d65c326342b5273727906b26ee
+  synced_at: 2026-09-30
+
+license:
+  declared_in_readme: MIT
+  root_license_file_found: false
+  redistribution: not_assumed
+  source_files_copied: false
+
+tracked_files:
+  - path: SKILL.md
+    sha: 5ade40fc4d9023177ecaa8a21fc5329a0104183c
+  - path: scripts/fsrs/go.mod
+    sha: a97277945a555bf068737de69cb13c5b4554fbdf
+  - path: scripts/catalog/pyproject.toml
+    sha: 782906adbec69d5587a8bfde48283764dac4ecad
+  - path: scripts/catalog/uv.lock
+    sha: e7d777f5472cccd7a276c00428344a343cc22647
+
+runtime:
+  required_for_fsrs:
+    - Go >=1.22
+  optional_catalog:
+    - Python >=3.11
+    - uv
+    - pydantic
+    - pdfplumber
+  workspace_writes:
+    - git repository initialization
+    - lessons/
+    - practice/
+    - notes/
+    - .fsrs/
+    - .study-config.json
+
+adoption:
+  use_policy: direct-project-local-on-demand
+  trigger_policy: explicit-long-term-study-intent
+  do_not_globalize:
+    - forced energy gating
+    - course/exercise structure
+    - user-must-implement-code teaching rule
+  optional_integrations_not_installed_by_default:
+    - NotebookLM MCP
+    - SciAgent-Skills
+    - context7
+    - Playwright
+    - visual-explainer
+    - local RAG tools
+  notes:
+    - NotebookLM integration uses undocumented browser APIs/cookie authentication and requires separate explicit review.
+    - The study workspace, not chat memory, is the durable source of learning state.
+    - FSRS is valuable for multi-week study but unnecessary for casual questions.
+
+risk:
+  level: medium
+  notes:
+    - creates and commits a project workspace
+    - compiles/runs a Go FSRS helper
+    - optional catalog installs Python dependencies and scans a user-selected book directory
+    - optional research integrations may add network/account surfaces
+
+sync_policy:
+  review_diff_before_use: true
