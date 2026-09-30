@@ -1,0 +1,55 @@
+id: chacelow/ue5-editor-control
+mode: pointer
+category: unreal/editor-control
+
+upstream:
+  repo: chacelow/ue5-editor-control
+  url: https://github.com/chacelow/ue5-editor-control
+  branch: main
+  synced_commit: 3d02952714877c8b67feba86649e9e206522d1fa
+  synced_at: 2026-09-30
+  version: "1.0.0"
+  compatibility: "UE5 5.4+; README says tested with 5.7"
+
+license:
+  type: MIT
+  redistribution: permitted
+  mirror_reason: executable UE plugin and release binaries are better pinned/reviewed than mirrored into the source catalog
+
+tracked_files:
+  - path: skills/ue5-editor-control/SKILL.md
+    sha: 9da560e806bb6468a354ce52c4ce0731b78a78f4
+  - path: skills/ue5-editor-control/scripts/install.sh
+    sha: 6b8bc18a18adb6563c5b03ff6c287c0f01aac899
+  - path: skills/ue5-editor-control/scripts/ue5cmd.sh
+    sha: 0eff48b934c079012de63af7832515454f076bc8
+  - path: Source/UE5AIAssistant/Private/HttpCommandServer.cpp
+    sha: 635ba0090b013087d0133bd47fc371fe8f54dd07
+  - path: Source/UE5AIAssistant/Private/UE5AIAssistantModule.cpp
+    sha: 2f60920232950d1615957bc372f53fc1a0c11195
+  - path: UE5AIAssistant.uplugin
+    sha: 06a379214251f25e186a53b491fcae5973aad724
+
+adoption:
+  use_policy: adapted-experimental
+  adapted_in:
+    repo: Guluguluxxx/my-ai-skills
+    path: skills/adapted/personal-ue5-editor-control
+
+risk:
+  level: high
+  findings:
+    - plugin exposes editor mutation over HTTP on port 58080
+    - reviewed execute handler does not perform authentication checks
+    - CORS response allows origin "*"
+    - generic reflection includes call_function, modify_array_property, and execute_python
+    - installer removes an existing Plugins/UE5AIAssistant directory before extraction
+    - installer downloads a release ZIP without checksum/signature verification in the reviewed script
+    - save_all, delete, settings writes, reflection writes, and arbitrary Python can make broad persistent changes
+  documentation_drift:
+    - latest commit/AGENTS.md lists 67 commands while selected SKILL.md metadata still says 65
+
+sync_policy:
+  review_diff_before_update: true
+  require_three_way_analysis: true
+  require_sandbox_retest_after_plugin_or_command-surface_change: true
