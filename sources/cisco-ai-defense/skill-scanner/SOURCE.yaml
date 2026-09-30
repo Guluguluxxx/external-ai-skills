@@ -1,0 +1,54 @@
+id: cisco-ai-defense/skill-scanner
+mode: pointer
+category: security/skill-scanner
+
+upstream:
+  repo: cisco-ai-defense/skill-scanner
+  url: https://github.com/cisco-ai-defense/skill-scanner
+  release: 2.1.0
+  reviewed_commit: a24df340ca6056a6446a239f4a7b114b11c6073a
+  reviewed_at: 2026-09-30
+  tracking_branch: main
+  tracking_head_at_review: 877a41320066cdee172095356c6818208ba7a806
+
+license:
+  type: Apache-2.0
+  redistribution: permitted
+  mode_reason: executable security tool; source mirroring is unnecessary
+
+runtime:
+  package: cisco-ai-skill-scanner
+  reviewed_version: 2.1.0
+  python: ">=3.11,<3.15"
+  preferred_install: "uv tool install cisco-ai-skill-scanner==2.1.0"
+  default_scan: "skill-scanner scan <TARGET>"
+  optional_features_default: false
+
+adoption:
+  use_policy: tool-only-high-risk-second-opinion
+  role:
+    - second opinion after SkillSpector/manual review for high-risk Skills
+    - static/core pipeline evidence
+  do_not_enable_by_default:
+    - LLM analyzer
+    - cloud AI Defense
+    - VirusTotal uploads
+    - provider extras
+    - behavioral/trigger/meta modes unless the review needs them
+  rationale:
+    - complements SkillSpector with a different detector stack
+    - does not replace manual semantic review
+    - current main contains unreleased changes, so the install is pinned to stable 2.1.0
+
+risk:
+  level: medium
+  notes:
+    - scans untrusted Skill content
+    - optional modes can transmit content to LLM/cloud services
+    - VirusTotal upload mode can send unknown files externally
+    - package includes broad analysis dependencies
+    - no findings are not a security guarantee
+
+sync_policy:
+  review_new_release_before_upgrade: true
+  do_not_follow_main_for_installation: true
