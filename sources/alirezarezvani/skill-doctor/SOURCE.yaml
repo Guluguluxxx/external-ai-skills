@@ -1,0 +1,24 @@
+upstream:
+  repo: alirezarezvani/claude-skills
+  branch: main
+  reviewed_commit: 19392f7a08264ed00486a251f5b2098321771f94
+  path: engineering/skill-doctor/skills/skill-doctor
+  reviewed_at: 2026-09-30
+
+mode: pointer
+category: tooling/skill-evaluation
+license:
+  repo: MIT
+  upstream_derivation: warpdotdev/common-skills skill-doctor (MIT)
+
+use_policy: adapted
+adapted_in:
+  repo: Guluguluxxx/my-ai-skills
+  path: skills/adapted/personal-skill-doctor
+
+review_notes:
+  - Collector, aggregator, and renderer are stdlib-only.
+  - Collector reads local Claude Code / Codex session history and redacts common secret patterns.
+  - Upstream privacy wording is too broad for cloud-agent scoring: redacted transcripts may enter the active model provider boundary when the agent judges them.
+  - Personal version defaults to current-repo strict scoping and requires explicit approval before reading session history.
+  - Composite grade is diagnostic only and must not drive skill edits.
