@@ -31,19 +31,21 @@ selected_skills:
 
   - name: obsidian-cli
     upstream_path: skills/obsidian-cli
-    use_policy: direct
+    use_policy: adapted
     risk: medium
     files:
       - path: SKILL.md
         sha: 0046c45abc11cbba48cee538e9cce9993a62747b
 
 review:
-  conclusion: direct-use
+  conclusion: mixed-use
   notes:
     - obsidian-markdown is instruction-only and needs no personal fork.
-    - obsidian-cli is instruction-only but can invoke a powerful local CLI, including note writes and Obsidian app-context JavaScript.
-    - Personal write-routing and note-structure rules should live in a separate personal workflow instead of modifying the upstream CLI Skill.
-    - Obsidian CLI requires a compatible local Obsidian installation and the application to be running.
+    - obsidian-cli is instruction-only but can invoke a powerful local CLI, including note writes, publish/delete operations, plugin changes, and Obsidian app-context JavaScript.
+    - Current upstream CLI examples still use the obsolete `silent` flag. Current Obsidian CLI defaults to silent behavior and uses `open` to open a created/updated target.
+    - Use an adapted personal CLI Skill for current host syntax and safety boundaries; keep this mirror byte-identical to upstream.
+    - Personal write-routing and note-structure rules live in a separate personal knowledge workflow.
+    - Obsidian CLI requires a current desktop installer, CLI enabled in Settings, and the app running.
 
 sync_policy:
   preserve_upstream_bytes: true
