@@ -66,3 +66,13 @@ sources:
     synced_commit: eafcc77001e496cc43499e4923b663aec722c813
     license_status: MIT
     use_policy: direct-project-local
+
+  - id: chacelow/ue5-editor-control
+    category: unreal/editor-control
+    mode: pointer
+    path: sources/chacelow/ue5-editor-control
+    upstream_repo: chacelow/ue5-editor-control
+    upstream_branch: main
+    synced_commit: 3d02952714877c8b67feba86649e9e206522d1fa
+    license_status: MIT
+    use_policy: adapted-experimental
