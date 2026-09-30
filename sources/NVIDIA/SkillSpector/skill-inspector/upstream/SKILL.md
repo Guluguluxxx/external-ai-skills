@@ -125,7 +125,7 @@ Tone and formatting:
 Recommended report shape:
 
 ```text
-## 🛡️ Skill Inspector: {skill-name}
+## 🛡️ Skill Inspector: `{skill-name}`
 
 **Source:** {path-or-url}
 **Verdict:** {APPROVE | CAUTION | REJECT} {short meaning}
