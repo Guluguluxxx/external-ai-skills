@@ -50,3 +50,11 @@ review:
 sync_policy:
   preserve_upstream_bytes: true
   review_diff_before_sync: true
+
+personal_integration:
+  adapted_in:
+    repo: Guluguluxxx/my-ai-skills
+    path: skills/adapted/obsidian-cli
+  orchestrated_by:
+    repo: Guluguluxxx/my-ai-skills
+    path: skills/own/personal-knowledge-workflow
