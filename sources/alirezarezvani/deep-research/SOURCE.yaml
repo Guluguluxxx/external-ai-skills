@@ -1,0 +1,35 @@
+id: alirezarezvani/claude-skills:deep-research
+mode: mirror
+category: research/deep-research
+
+upstream:
+  repo: alirezarezvani/claude-skills
+  path: research/deep-research/skills/deep-research
+  branch: main
+  synced_commit: 19392f7a08264ed00486a251f5b2098321771f94
+  synced_at: 2026-09-30
+
+license:
+  type: MIT
+  redistribution: permitted
+  license_sha: c3e30bcc287d6a1ebdb4ab29c10d344fd1053639
+
+runtime_files:
+  - path: SKILL.md
+    sha: fec8d15634b0b2ccafa5b493aa07304957c563ed
+  - path: references/full-catalog.md
+    sha: f00ab02dbbdb3f5444f510b8bf48db41cfcb4fc2
+
+adoption:
+  use_policy: adapted-on-demand
+  risk: low
+  notes:
+    - retain hypothesis framing, source grounding, adversarial search, refresh targets, and reusable findings
+    - do not retain a rigid three-different-source-types requirement for every thesis
+    - model/subagent selection is delegated to personal-model-routing
+    - research artifacts should scale with task value instead of always forcing the heaviest folder structure
+
+personal_integration:
+  adapted_in:
+    repo: Guluguluxxx/my-ai-skills
+    path: skills/adapted/personal-deep-research
