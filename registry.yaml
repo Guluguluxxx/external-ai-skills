@@ -136,3 +136,13 @@ sources:
     synced_commit: dffa35f955c421d65c326342b5273727906b26ee
     license_status: README-declares-MIT-no-root-license-file
     use_policy: direct-project-local-on-demand
+
+  - id: alirezarezvani/claude-skills:deep-research
+    category: research/deep-research
+    mode: mirror
+    path: sources/alirezarezvani/deep-research
+    upstream_repo: alirezarezvani/claude-skills
+    upstream_branch: main
+    synced_commit: 19392f7a08264ed00486a251f5b2098321771f94
+    license_status: MIT
+    use_policy: adapted-on-demand
