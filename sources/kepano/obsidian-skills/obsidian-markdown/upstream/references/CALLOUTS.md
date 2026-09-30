@@ -47,3 +47,12 @@
 | `bug` | - | Red, bug |
 | `example` | - | Purple, list |
 | `quote` | `cite` | Gray, quote |
+
+## Custom Callouts (CSS)
+
+```css
+.callout[data-callout="custom-type"] {
+  --callout-color: 255, 0, 0;
+  --callout-icon: lucide-alert-circle;
+}
+```
