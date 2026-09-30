@@ -38,3 +38,31 @@ risk:
 sync_policy:
   pin_tool_review_to_commit: true
   do_not_auto-update_adapted_skills: true
+
+
+deep_review_2026_09_30:
+  package:
+    name: skills
+    reviewed_version: 1.7.0
+    node_engine: ">=22.20.0"
+  telemetry:
+    enabled_by_default: true
+    endpoint: https://add-skill.vercel.sh/t
+    audit_endpoint: https://add-skill.vercel.sh/audit
+    disable_env:
+      - DO_NOT_TRACK
+      - DISABLE_TELEMETRY
+    policy: disable by default in personal lifecycle operations
+  agent_behavior:
+    - add auto-enables non-interactive yes mode when an AI agent is detected
+    - remove auto-enables non-interactive yes mode when an AI agent is detected
+    - use materializes the selected Skill in a temporary directory and injects its SKILL.md into the launched/generated agent prompt
+  safety_implications:
+    - temporary use is not a security bypass; review still precedes use
+    - remove/update are mutation operations and must stay under lifecycle backup/authorization rules
+    - update must not be used on adapted Skills as a substitute for Base/New/Mine review
+    - avoid unpinned npx latest for canonical lifecycle operations
+  preferred_invocation:
+    package: skills@1.7.0
+    persistence: on-demand-npx
+    telemetry: disabled
