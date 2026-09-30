@@ -116,3 +116,13 @@ sources:
     reviewed_commit: a24df340ca6056a6446a239f4a7b114b11c6073a
     license_status: Apache-2.0
     use_policy: tool-only-high-risk-second-opinion
+
+  - id: huggingface/skills
+    category: ai/huggingface
+    mode: pointer
+    path: sources/huggingface/skills
+    upstream_repo: huggingface/skills
+    upstream_branch: main
+    synced_commit: 80f9fa530e46f4ae642fcb9e1725bad0e1979395
+    license_status: Apache-2.0
+    use_policy: mixed-adapted-on-demand
