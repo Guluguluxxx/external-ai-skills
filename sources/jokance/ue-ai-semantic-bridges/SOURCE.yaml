@@ -59,3 +59,40 @@ personal_fit:
 sync_policy:
   review_diff_before_update: true
   require_ue57_plugin_compatibility_test_before_adoption: true
+
+
+deep_review_2026_09_30:
+  execution_model:
+    - DSL generation is text/file based.
+    - validate and preview run through Unreal commandlets and do not by themselves persist the mapped /Game asset.
+    - material normalize rewrites the input .materialdsl in place only after successful validation/temporary round-trip.
+    - import writes the mapped Unreal asset.
+    - import-root is a bulk import surface and must be treated separately from single-file import.
+    - build is explicit in the reviewed fixed launchers; it is not enabled by default.
+  lower_privilege_than_editor_control:
+    true
+  reason:
+    - no general unauthenticated HTTP command surface is exposed by these Skills
+    - supported operations are constrained by DSL schema and Bridge plugin commandlets
+    - validation and preview can precede persistent asset import
+  material_wrapper_findings:
+    - request_materialsemantic_editor_windows.bat defaults MODE to import-root
+    - no-argument/default use of the running-editor wrapper is therefore unsafe without explicit mode control
+    - wrapper may auto-launch Unreal Editor
+    - reviewed Windows wrapper contains a machine-specific fallback path D:\Games\UE_5.7\Engine\Binaries\Win64\UnrealEditor.exe
+  widget_findings:
+    - reviewed docs reference request_widgetsemantic_editor_windows.bat and request_widgetsemantic_editor_mac.sh
+    - those referenced wrapper files were not found in the reviewed Git repository paths at the baseline commit
+    - treat running-editor widget fallback as documentation/runtime drift until verified from the installed plugin/skill package
+  plugin_boundary:
+    - MaterialSemanticBridge and WidgetSemanticBridge are separate Fab plugins
+    - plugin implementation is not contained in this Skill repository
+    - GitHub-side review cannot establish the full plugin write/security surface
+    - Fab/plugin UE5.7 compatibility must be verified locally before adoption
+  personal_policy:
+    - normal path is validate/preview before import
+    - single-file import may be used only for the intended mapped asset
+    - import-root requires explicit confirmation and a source-control/backup boundary
+    - do not use --build unless compilation is actually required
+    - existing Custom-node-only HLSL logic edits should not be forced through DSL when no graph/interface change is needed
+    - visual preview is evidence, not a substitute for final in-editor human validation
