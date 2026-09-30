@@ -47,3 +47,15 @@ risk:
 sync_policy:
   review_diff_before_update: true
   pin_install_to_reviewed_commit: true
+
+
+integration_notes:
+  scope: project-local
+  combine_with:
+    repo: Guluguluxxx/my-ai-skills
+    path: skills/adapted/personal-data-dashboard
+  personal_boundaries:
+    - Treat install commands in examples as optional setup guidance, not automatic authorization.
+    - Do not globally install Lighthouse, axe, browser tooling, or MCP servers solely because a Skill mentions them.
+    - Prefer existing project tools, existing browser capabilities, or temporary/project-local tooling.
+    - Keep field data, lab measurements, and static hypotheses explicitly separated.
