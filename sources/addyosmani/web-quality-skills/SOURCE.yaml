@@ -1,0 +1,49 @@
+id: addyosmani/web-quality-skills
+mode: pointer
+category: web/quality
+
+upstream:
+  repo: addyosmani/web-quality-skills
+  url: https://github.com/addyosmani/web-quality-skills
+  branch: main
+  synced_commit: afa8da942115f2961fdbfa80807ea0b232ff6c00
+  synced_at: 2026-09-30
+  version: "2.0"
+
+license:
+  type: MIT
+  redistribution: permitted
+  mirror_reason: the six Skills cross-reference sibling Skills/references; keep the reviewed upstream commit as one direct project-level pack
+
+selected_skills:
+  - name: web-quality-audit
+    sha: 581ec7c5e8e05e6ac93d99d872906595581efc42
+  - name: performance
+    sha: 913a36c6ad869d530053f20fd05698804cb24e3e
+  - name: core-web-vitals
+    sha: 60343a52d1832f89eb0ebf6722f4d150fe806777
+  - name: accessibility
+    sha: 22a244430f890fe44cbd7a50590d5cbf8528c77b
+  - name: seo
+    sha: 015c2f589896bcb0b08b5b77e058ca3bedcfe9b7
+  - name: best-practices
+    sha: 54e6c16cd981be84f25804ff7c1bffa4bc5cefa4
+
+adoption:
+  use_policy: direct-project-local
+  install_scope: web-project
+  rationale:
+    - the pack is already Codex-aware
+    - its Skills compose and cross-reference each other
+    - measurement-first behavior complements universal-development-workflow instead of replacing it
+
+risk:
+  level: medium
+  notes:
+    - optional browser/Lighthouse/Chrome DevTools integrations execute local tooling and may access live pages
+    - CrUX/PageSpeed or other live services may involve network requests
+    - live browser evidence must remain separate from static hypotheses
+
+sync_policy:
+  review_diff_before_update: true
+  pin_install_to_reviewed_commit: true
