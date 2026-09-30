@@ -1,0 +1,47 @@
+id: ZeroPointRepo/youtube-skills:youtube-full
+mode: mirror
+category: media/youtube
+
+upstream:
+  repo: ZeroPointRepo/youtube-skills
+  path: skills/youtube-full
+  branch: main
+  synced_commit: 4f7994b94e7d5e250c3b51102d609992e04d5d0d
+  synced_at: 2026-09-30
+  upstream_version: 1.6.2
+
+license:
+  type: MIT
+  redistribution: permitted
+  license_sha: b3a72de31eae6d3beecf813bfb8e7e775125fe79
+
+runtime_files:
+  - path: SKILL.md
+    sha: 8c721a2ced54137ff3044d2fb23402d43569c6e3
+  - path: references/auth-setup.md
+    sha: 112c27144fc93ec5a5b6a9e94627dfd08d0e5031
+  - path: references/curl-examples.md
+    sha: f207ce2c420923894e88cc9b86dda46cbd1ddd0b
+
+risk:
+  level: high
+  reasons:
+    - all useful API calls send YouTube identifiers/search terms to TranscriptAPI
+    - requires a third-party API key and consumes credits
+    - upstream auth setup asks the agent to collect email/OTP, register an account, handle JWT/API keys, and persist secrets
+    - broad upstream trigger can activate for many topics where ordinary web research would be sufficient
+
+adoption:
+  use_policy: adapted-on-demand
+  personal_rules:
+    - never create/register a TranscriptAPI account on the user's behalf
+    - never ask the user to paste the API key into chat
+    - never persist or move the key between config files
+    - run only when TRANSCRIPT_API_KEY already exists in the environment
+    - disclose the third-party data boundary when material
+    - avoid unbounded pagination or bulk credit use unless the request explicitly calls for it
+
+personal_integration:
+  adapted_in:
+    repo: Guluguluxxx/my-ai-skills
+    path: skills/adapted/personal-youtube-research
