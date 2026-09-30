@@ -1,0 +1,44 @@
+id: NVIDIA/SkillSpector/skill-inspector
+mode: mirror
+
+upstream:
+  repo: NVIDIA/SkillSpector
+  url: https://github.com/NVIDIA/SkillSpector
+  path: skills/skill-inspector
+  branch: main
+  synced_commit: 2226747e4ca97198bb82faf5085b8a75f2e1dc02
+  synced_at: 2026-09-30
+
+tracked_files:
+  - path: skills/skill-inspector/SKILL.md
+    sha: 25f071e28b5e679da7d8deae1789dbbf8cec9ccf
+  - path: LICENSE
+    sha: 48afca9e235dc4e1c05cf1aca7b111328ce6fa86
+  - path: pyproject.toml
+    sha: e04a8ccaa0d201cc40292ade667b6eca77a74df2
+
+license:
+  status: Apache-2.0
+  redistribution: allowed
+  source_files_copied: true
+
+usage:
+  type: direct
+  adapt_required: false
+  role: security review before adopting or installing third-party Skills
+
+runtime_dependency:
+  cli: skillspector
+  package_version: 2.12.0
+  python: ">=3.12,<3.15"
+  install_options:
+    preferred: "uv tool install git+https://github.com/NVIDIA/skillspector.git"
+    static_only_supported: true
+    mcp_extra_required: false
+
+review_notes:
+  - Static score is evidence, not the final verdict.
+  - Target Skill scripts must not be executed during review.
+  - Manual semantic review remains required for sensitive findings.
+  - Optional LLM scanning may use external providers and credentials; default adoption should use --no-llm first.
+  - Scanner itself can ingest Git repos/URLs/archives and makes network requests for remote inputs.
